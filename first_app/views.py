@@ -29,3 +29,14 @@ def get_data(request):
     print(user_list)
     return HttpResponse(json.dumps(user_list), \
         content_type="application/json")
+
+def upload_data(request):
+    return render(request, "first_app/upload.html")
+
+
+def save_data(request):
+    name = request.POST.get("username")
+    age = request.POST.get("age")
+    password = request.POST.get("password")
+    UserInfo.objects.create(name=name, age=age, password=password)
+    return HttpResponse("数据提交成功！")

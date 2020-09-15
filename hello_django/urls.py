@@ -23,4 +23,6 @@ urlpatterns = [
     url(r'^get_json/$', ret_json_data),
     url(r'^inser_data', insert_data),
     url(r'^get_data', get_data),
+    url(r'^upload_data', upload_data),
+    url(r'^save_data', save_data),
 ]
