@@ -15,9 +15,17 @@ def ret_json_data(request):
         content_type="application/json")
 
 
-def inser_data(request):
+def insert_data(request):
     name = request.GET.get("name")
     age = request.GET.get("age")
     passwd = request.GET.get("password")
     UserInfo.objects.create(name=name, age=age, password=passwd)
     return HttpResponse("数据插入成功！")
+
+
+def get_data(request):
+    user_list = UserInfo.objects.all().values()
+    user_list = list(user_list)
+    print(user_list)
+    return HttpResponse(json.dumps(user_list), \
+        content_type="application/json")

@@ -21,5 +21,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', index),
     url(r'^get_json/$', ret_json_data),
-    url(r'^inser_data', inser_data),
+    url(r'^inser_data', insert_data),
+    url(r'^get_data', get_data),
 ]
