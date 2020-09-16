@@ -25,4 +25,9 @@ urlpatterns = [
     url(r'^get_data', get_data),
     url(r'^upload_data', upload_data),
     url(r'^save_data', save_data),
+    url(r'^upload_script', upload_script),
+    url(r'^handout_script', handout_script),
+    url(r'^scan_host', scan_host),
+    url(r'^upload_file', upload_file),
+    url(r'^deal_upload_file', deal_upload_file),
 ]
