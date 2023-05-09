@@ -13,12 +13,14 @@ def git():
 def add_origin():
     local("git remote add origin git@github.com:EvenYan/hello_test.git")
 
+
 def push():
-    local("git push -u origin master -f")
+    result = local("git push -u origin master -f", capture=True)
+    print(result)
 
 
 def prepare_deploy():
     execute(db)
     execute(git)
-    execute(add_origin)
+    # execute(add_origin)
     execute(push)
